@@ -1,0 +1,1504 @@
+INFO 2025-08-07 13:30:46,029 apps 4807 140656074948864 AXES: BEGIN version 8.0.0, blocking by combination of username and ip_address
+INFO 2025-08-07 13:30:51,269 apps 4866 140392187744512 AXES: BEGIN version 8.0.0, blocking by combination of username and ip_address
+INFO 2025-08-07 13:31:11,210 apps 4997 140544079929600 AXES: BEGIN version 8.0.0, blocking by combination of username and ip_address
+INFO 2025-08-07 13:31:19,983 apps 5091 140463551365376 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:31:23,106 apps 5138 140120777064704 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:31:26,239 apps 5165 140649820664064 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:31:29,860 apps 5197 139864178172160 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:31:34,304 apps 5247 139702323990784 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:33:05,127 apps 5699 140430386110720 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:33:10,319 apps 5749 139880326004992 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:33:17,595 apps 5863 139710895563008 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:33:49,365 apps 6043 140575140294912 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:34:01,688 apps 6119 140014942372096 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:34:04,490 apps 6151 140043980914944 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:34:07,169 apps 6189 140663429132544 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:34:13,810 apps 6239 140064753549568 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:34:19,073 apps 6341 140155443724544 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:34:25,325 apps 6391 140101946843392 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:35:17,303 apps 7132 139728026865920 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:35:17,560 apps 7133 140401291772160 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:35:17,565 autoreload 7133 140401291772160 Watching for file changes with StatReloader
+ERROR 2025-08-07 13:35:21,110 log 7133 140401218418368 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 13:35:21,136 log 7133 140401138726592 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 13:35:21,156 log 7133 140401130333888 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 13:35:21,175 log 7133 140401121941184 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+INFO 2025-08-07 13:50:38,740 autoreload 7133 140401291772160 /workspace/food_delivery/settings.py changed, reloading.
+INFO 2025-08-07 13:50:39,260 apps 9276 139713956638976 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:50:39,264 autoreload 9276 139713956638976 Watching for file changes with StatReloader
+INFO 2025-08-07 13:50:45,525 autoreload 9276 139713956638976 /workspace/food_delivery/settings.py changed, reloading.
+INFO 2025-08-07 13:50:45,841 apps 9347 139921895543040 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:50:45,844 autoreload 9347 139921895543040 Watching for file changes with StatReloader
+INFO 2025-08-07 13:51:35,137 apps 9471 139802393342208 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:51:39,289 apps 9489 139726403592448 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 13:51:43,264 apps 9513 139699797610752 AXES: BEGIN version 8.0.0, blocking by ip_address
+ERROR 2025-08-07 13:52:27,102 log 9347 139921824151232 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 13:52:27,141 log 9347 139921814709952 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 13:52:27,168 log 9347 139921805268672 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 13:52:27,193 log 9347 139921796875968 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+INFO 2025-08-07 14:28:37,153 apps 10549 139787150344448 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 14:28:55,326 autoreload 9347 139921895543040 /workspace/restaurants/urls.py changed, reloading.
+INFO 2025-08-07 14:28:55,645 apps 10646 140340794982656 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 14:28:55,648 autoreload 10646 140340794982656 Watching for file changes with StatReloader
+INFO 2025-08-07 14:28:59,889 autoreload 10646 140340794982656 /workspace/orders/urls.py changed, reloading.
+INFO 2025-08-07 14:29:00,195 apps 10666 139679917396224 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 14:29:00,198 autoreload 10666 139679917396224 Watching for file changes with StatReloader
+INFO 2025-08-07 14:29:02,419 autoreload 10666 139679917396224 /workspace/delivery/urls.py changed, reloading.
+INFO 2025-08-07 14:29:02,726 apps 10686 140442169016576 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 14:29:02,729 autoreload 10686 140442169016576 Watching for file changes with StatReloader
+INFO 2025-08-07 14:29:04,947 autoreload 10686 140442169016576 /workspace/payments/urls.py changed, reloading.
+INFO 2025-08-07 14:29:05,256 apps 10688 140313107505408 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 14:29:05,259 autoreload 10688 140313107505408 Watching for file changes with StatReloader
+INFO 2025-08-07 14:29:08,493 autoreload 10688 140313107505408 /workspace/notifications_app/urls.py changed, reloading.
+INFO 2025-08-07 14:29:08,807 apps 10708 140155161415936 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 14:29:08,810 autoreload 10708 140155161415936 Watching for file changes with StatReloader
+INFO 2025-08-07 14:29:11,034 autoreload 10708 140155161415936 /workspace/analytics/urls.py changed, reloading.
+INFO 2025-08-07 14:29:11,347 apps 10710 140262985343232 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 14:29:11,351 autoreload 10710 140262985343232 Watching for file changes with StatReloader
+INFO 2025-08-07 14:29:12,760 apps 10736 140248758776064 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 14:29:24,399 apps 10849 140369392697600 AXES: BEGIN version 8.0.0, blocking by ip_address
+ERROR 2025-08-07 14:29:35,589 log 10710 140262914389696 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 14:29:35,611 log 10710 140262904948416 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 14:29:35,636 log 10710 140262693140160 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 14:29:35,657 log 10710 140262684747456 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+WARNING 2025-08-07 14:29:59,333 log 10710 140262676354752 Not Found: /
+ERROR 2025-08-07 14:29:59,415 log 10710 140262676354752 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 14:29:59,464 log 10710 140262666913472 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 14:29:59,523 log 10710 140262658520768 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 14:29:59,609 log 10710 140262650128064 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+INFO 2025-08-07 14:30:25,351 autoreload 10710 140262985343232 /workspace/food_delivery/urls.py changed, reloading.
+INFO 2025-08-07 14:30:25,696 apps 11318 140633825247488 AXES: BEGIN version 8.0.0, blocking by ip_address
+INFO 2025-08-07 14:30:25,699 autoreload 11318 140633825247488 Watching for file changes with StatReloader
+ERROR 2025-08-07 14:30:26,993 log 11318 140633747482304 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 14:30:27,040 log 11318 140633755875008 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 14:30:27,098 log 11318 140633532528320 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 14:30:27,152 log 11318 140633524135616 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2025-08-07 14:30:40,560 log 11318 140633515742912 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/workspace/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 416, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/client.py", line 627, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 1533, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 380, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
