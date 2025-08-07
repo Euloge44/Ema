@@ -6,5 +6,6 @@ from django.urls import path
 app_name = 'analytics'
 
 urlpatterns = [
-    # URLs à implémenter dans la Phase 5
+    # URLs temporaires pour la Phase 1
+    path('', lambda request: None, name='analytics_list'),
 ]

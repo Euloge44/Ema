@@ -6,5 +6,6 @@ from django.urls import path
 app_name = 'notifications_app'
 
 urlpatterns = [
-    # URLs à implémenter dans la Phase 4
+    # URLs temporaires pour la Phase 1
+    path('', lambda request: None, name='notifications_list'),
 ]

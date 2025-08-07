@@ -6,8 +6,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from . import views
 
 urlpatterns = [
+    # Page d'accueil
+    path('', views.home, name='home'),
+    path('health/', views.HealthCheckView.as_view(), name='health'),
+    
     # Admin Django
     path('admin/', admin.site.urls),
     

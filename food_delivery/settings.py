@@ -32,7 +32,6 @@ THIRD_PARTY_APPS = [
     'corsheaders',
     'django_filters',
     'channels',
-    'notifications',
     'phonenumber_field',
     'django_extensions',
     'drf_spectacular',
@@ -288,8 +287,8 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 10 * 1024 * 1024  # 10MB
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 SESSION_CACHE_ALIAS = 'default'
 
-# Notifications
-DJANGO_NOTIFICATIONS_CONFIG = {
-    'SOFT_DELETE': True,
-    'USE_JSONFIELD': True,
-}
+# Notifications (temporairement désactivé pour compatibilité Django 4.2+)
+# DJANGO_NOTIFICATIONS_CONFIG = {
+#     'SOFT_DELETE': True,
+#     'USE_JSONFIELD': True,
+# }

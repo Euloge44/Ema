@@ -6,5 +6,6 @@ from django.urls import path
 app_name = 'orders'
 
 urlpatterns = [
-    # URLs à implémenter dans la Phase 3
+    # URLs temporaires pour la Phase 1
+    path('', lambda request: None, name='orders_list'),
 ]

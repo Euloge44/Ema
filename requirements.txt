@@ -30,8 +30,8 @@ paypalrestsdk==1.13.1
 geopy==2.4.0
 requests==2.31.0
 
-# Notifications
-django-notifications-hq==0.9.0
+# Notifications (remplacé par notre système personnalisé)
+# django-notifications-hq==0.9.0
 
 # Utilitaires
 python-decouple==3.8
